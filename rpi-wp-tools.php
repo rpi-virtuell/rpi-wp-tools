@@ -35,6 +35,7 @@ class RpiWpTools
                 </a>
             </div>
             <?php
+            var_dump(ob_get_clean());
             return ob_get_clean();
         }
         return 'ERROR: NO POST ID FOUND or Attributes missing. Atts given : ' . var_export($atts);
