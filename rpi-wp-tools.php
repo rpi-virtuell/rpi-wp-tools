@@ -27,7 +27,7 @@ class RpiWpTools
             var_dump($atts);
             ?>
             <div>
-                <a class="button"
+                <a class="wp_button"
                    href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
                     <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>
                 >
