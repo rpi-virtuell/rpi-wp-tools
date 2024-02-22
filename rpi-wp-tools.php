@@ -32,7 +32,7 @@ class RpiWpTools
             <?php
             return ob_get_clean();
         }
-        return 'ERROR: NO POST ID FOUND';
+        return 'ERROR: NO POST ID FOUND or Attributes missing. Atts given : '. var_export($atts) ;
     }
 
 }
