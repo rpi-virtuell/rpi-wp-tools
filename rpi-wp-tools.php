@@ -25,14 +25,16 @@ class RpiWpTools
         if (!empty(get_the_ID()) && !empty($atts)) {
             ob_start();
             ?>
-            <a class="button"
-               href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
-                <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>>
-                <?php echo $atts['text'] ?></a>
+            <div>
+                <a class="button"
+                   href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
+                    <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>>
+                    <?php echo $atts['text'] ?></a>
+            </div>
             <?php
             return ob_get_clean();
         }
-        return 'ERROR: NO POST ID FOUND or Attributes missing. Atts given : '. var_export($atts) ;
+        return 'ERROR: NO POST ID FOUND or Attributes missing. Atts given : ' . var_export($atts);
     }
 
 }
