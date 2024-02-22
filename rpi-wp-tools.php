@@ -24,12 +24,15 @@ class RpiWpTools
     {
         if (!empty(get_the_ID()) && !empty($atts)) {
             ob_start();
+            var_dump($atts);
             ?>
             <div>
                 <a class="button"
                    href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
-                    <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>>
-                    <?php echo $atts['text'] ?></a>
+                    <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>
+                >
+                    <?php echo $atts['text'] ?>
+                </a>
             </div>
             <?php
             return ob_get_clean();
