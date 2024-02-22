@@ -22,20 +22,20 @@ class RpiWpTools
 
     function display_link_with_post_id_to($atts = [])
     {
-        if (!empty(get_the_ID()) && !empty($atts)) {
+
+        if (!empty(get_the_ID())
+            && key_exists('link', $atts)
+            && key_exists('new_tab', $atts)
+            && key_exists('text', $atts)) {
             ob_start();
-            var_dump($atts);
             ?>
             <div>
-                <a class="wp_button"
-                   href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
-                    <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>
+                <a class="button" href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
+                    <?php echo $atts['new_tab'] == 'true' ? 'target="_blank" rel="noopener noreferrer"' : '' ?>
                 >
-                    <?php echo $atts['text'] ?>
-                </a>
+                    <?php echo $atts['text'] ?></a>
             </div>
             <?php
-            var_dump(ob_get_clean());
             return ob_get_clean();
         }
         return 'ERROR: NO POST ID FOUND or Attributes missing. Atts given : ' . var_export($atts);
