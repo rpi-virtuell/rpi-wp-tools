@@ -26,7 +26,7 @@ class RpiWpTools
             ob_start();
             ?>
             <a class="button"
-               href="<?php add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
+               href="<?php echo add_query_arg('post_id', get_the_ID(), $atts['link']) ?>"
                 <?php echo $atts['new_tab'] ? 'target="_blank" rel="noopener noreferrer' : '' ?>>
                 <?php echo $atts['text'] ?></a>
             <?php
